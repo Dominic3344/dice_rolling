@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -28,10 +30,13 @@ public class MainActivity extends AppCompatActivity {
         });
         Button roll =(Button) findViewById(R.id.rollDice);
         TextView result =(TextView) findViewById(R.id.Result);
+        Random randomdice = new Random();
+        int rand = randomdice.nextInt(6);
+        String res = String.valueOf(rand);
         roll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                result.setText("button clicked");
+                result.setText(res);
             }
         });
 
