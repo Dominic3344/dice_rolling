@@ -16,6 +16,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    Random randomdice = new Random();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,15 +31,22 @@ public class MainActivity extends AppCompatActivity {
         });
         Button roll =(Button) findViewById(R.id.rollDice);
         TextView result =(TextView) findViewById(R.id.Result);
-        Random randomdice = new Random();
-        int rand = randomdice.nextInt(6);
-        String res = String.valueOf(rand);
+
+
+
         roll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               int ran= dice();
+                String res = String.valueOf(ran);
                 result.setText(res);
             }
         });
+
+    }
+    int dice(){
+        int rand = randomdice.nextInt(1,6);
+        return rand;
 
     }
 }
