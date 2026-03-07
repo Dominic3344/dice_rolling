@@ -3,6 +3,7 @@ package com.example.dice_rolling_app;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         });
         Button roll =(Button) findViewById(R.id.rollDice);
         TextView result =(TextView) findViewById(R.id.Result);
+        ImageView imageView= findViewById(R.id.imageView);
+        int[] imageiew= {R.drawable.seven,R.drawable.one,R.drawable.two,R.drawable.three,R.drawable.four,R.drawable.five,R.drawable.six};
 
 
 
@@ -38,8 +41,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                int ran= dice();
-                String res = String.valueOf(ran);
-                result.setText(res);
+
+               // String res = String.valueOf(ran);
+               // result.setText(res);
+               // int index=0;
+                imageView.setImageResource(imageiew[ran]);
+
+
             }
         });
 
